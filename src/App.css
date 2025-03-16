@@ -1,5 +1,33 @@
+#root {
+  background-color: white;
+}
 .navbar {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+}
+.music-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 2rem;
+}
+
+img {
+  width: 200px;
+  height: 150px;
 }

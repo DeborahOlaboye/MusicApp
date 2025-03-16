@@ -25,27 +25,35 @@ const handlePlay = (id) => {
     
 
   return (
-    <div className="p-4 text-center">
-      <h1 className="text-2xl font-bold">Music API</h1>
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="main-container">
+      <div className='sidebar'>
+        <nav>
+          <a href="#"><ul>Login/Sign up</ul></a>
+          <a href="#"><ul>Home</ul></a>
+          <a href="#"><ul>New</ul></a>
+          <a href="#"><ul>Favourites</ul></a>
+          <a href="#"><ul>Artists</ul></a>
+        </nav>
+      </div>
+      <div className="music-area">
         {musicData.map((song) => (
-          <div key={song.id} className="border p-4 rounded-lg shadow-md">
+          <div key={song.id}>
             <img
               src={song.songImage}
               alt={song.songTitle}
-              className="w-full h-40 object-cover rounded mt-2"
             />
-            <h2 className="text-xl font-semibold">{song.songTitle}</h2>
-            <p className="text-gray-600">Artist: {song.artistName}</p>
-            <p className="text-gray-500">Album: {song.albumName || "N/A"}</p>
-            <p className="text-gray-500">Release Date: {song.releaseDate}</p>
-            <audio ref={(el) => (audioReference.current[song.id] = el)} onPlay={() => handlePlay(song.id)} controls className="w-full mt-2">
+            <h2>{song.songTitle}</h2>
+            <p>Artist: {song.artistName}</p>
+            <p>Album: {song.albumName || "N/A"}</p>
+            <p>Release Date: {song.releaseDate}</p>
+            <audio ref={(el) => (audioReference.current[song.id] = el)} onPlay={() => handlePlay(song.id)} controls>
               <source src={song.songUrl} type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           </div>
         ))}
       </div>
+      
     </div>
   );
 };
