@@ -1,5 +1,11 @@
 #root {
-  background-color: white;
+  background-color: rgb(3, 52, 109);
+  color: rgb(10, 237, 169);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  background: none;
 }
 .navbar {
   display: flex;
@@ -30,4 +36,12 @@
 img {
   width: 200px;
   height: 150px;
+}
+button {
+  cursor: pointer;
+  color: white;
+  background-color:rgb(5, 122, 255);
+  border-radius: 12px;
+  border: none;
+  padding: 0.5rem;
 }
